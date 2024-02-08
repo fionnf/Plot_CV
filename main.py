@@ -5,8 +5,8 @@ import numpy as np
 import os
 
 # Parameters
-Std_ox = float(0.3544)
-Std_re = float(0.4342)
+Std_ox = float(0)
+Std_re = float(0)
 offset = (Std_re + Std_ox) / 2
 electrode_diameter_mm = 3  # Diameter in millimeters
 
@@ -64,7 +64,6 @@ def plot_voltammogram(file_path, color, label, compute_current_density=False, el
     # Plot the voltammogram
     plt.plot(data['Potential/V'], data['Current/A'], color=color, label=label)
 
-
 # Plotting
 plt.figure(figsize=aspect_ratio)
 colors = sns.color_palette('tab10', len(file_paths))  # Get a color palette with as many colors as files
@@ -78,6 +77,6 @@ plt.title(plot_title)
 plt.legend()
 plt.tight_layout()
 
-plt.savefig(CV_verdazyl, dpi=600)
+plt.savefig("CV_fig", dpi=600)
 plt.show()
 
